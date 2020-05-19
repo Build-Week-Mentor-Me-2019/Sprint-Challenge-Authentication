@@ -17,4 +17,8 @@ server.use(cookieParser());
 server.use('/api/auth', authRouter);
 server.use('/api/jokes', authenticate, jokesRouter);
 
+server.get('/', (req, res) => {
+    res.status(200).json({ action: "API is running" });
+  });
+
 module.exports = server;
